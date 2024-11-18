@@ -18,7 +18,7 @@ class Auth extends CI_Controller
             redirect('auth/login');
         }
 
-        $this->load->view('auth/register');
+        $this->load->view('Auth/register');
     }
 
     public function login()
@@ -38,7 +38,7 @@ class Auth extends CI_Controller
             }
         }
 
-        $this->load->view('auth/login');
+        $this->load->view('Auth/login');
     }
 
     public function loginDole()
@@ -64,12 +64,12 @@ class Auth extends CI_Controller
             }
         }
 
-        $this->load->view('auth/login', compact('redirect_url'));
+        $this->load->view('Auth/login', compact('redirect_url'));
     }
 
     public function logout()
     {
         $this->session->unset_userdata('user_id');
-        redirect('auth/login');
+        redirect('Auth/login');
     }
 }

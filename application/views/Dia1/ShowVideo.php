@@ -372,8 +372,8 @@
         function setVideoSource() {
             video.src =
                 window.innerWidth <= 768 ?
-                "<?= base_url('assets/videos/dummy-video_16-9.mp4'); ?>" :
-                "<?= base_url('assets/videos/dummy-video_9-16.mp4'); ?>";
+                "<?= base_url('assets/videos/dia01.webm'); ?>" :
+                "<?= base_url('assets/videos/dia01_movil.webm'); ?>";
         }
     </script>
 
