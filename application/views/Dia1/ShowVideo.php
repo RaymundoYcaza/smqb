@@ -15,7 +15,7 @@
         <div class="loader-text">Cargando...</div>
     </div>
 
-    <div id="start-overlay" style="background-color: aquamarine">
+    <div id="start-overlay" style="background-color: aquamarine; background-image: <?= base_url('assets/images/don-jose.png') ?>">
         <button id="start-button">Comenzar</button>
     </div>
 
@@ -128,66 +128,54 @@
         }
 
         const doleSourceQuestions = [{
+            id: 1,
+            text: "¿Cuál de las siguientes afirmaciones sobre el plátano macho es verdadera?",
+            options: [{
                 id: 1,
-                text: "¿Cuál es el principal nutriente del plátano?",
-                options: [{
-                        id: 1,
-                        answer: "Potasio",
-                        isCorrect: true
-                    },
-                    {
-                        id: 2,
-                        answer: "Proteína",
-                        isCorrect: false
-                    },
-                    {
-                        id: 3,
-                        answer: "Vitamina C",
-                        isCorrect: false
-                    },
-                ],
-            },
-            {
+                answer: "El plátano macho es una planta herbácea perenne que llegó a la región del Mediterráneo alrededor del año 650.",
+                isCorrect: true
+            }, {
                 id: 2,
-                text: "¿Cómo se puede consumir el plátano?",
-                options: [{
-                        id: 1,
-                        answer: "Asado",
-                        isCorrect: true
-                    },
-                    {
-                        id: 2,
-                        answer: "Congelado",
-                        isCorrect: false
-                    },
-                    {
-                        id: 3,
-                        answer: "Todo lo anterior",
-                        isCorrect: false
-                    },
-                ],
-            },
-            {
+                answer: "El plátano macho es originario de América del Sur y fue exportado a Europa en el siglo XVI.",
+                isCorrect: false
+            }, {
                 id: 3,
-                text: "¿De qué color es el plátano maduro?",
-                options: [{
-                        id: 1,
-                        answer: "Amarillo",
-                        isCorrect: true
-                    },
-                    {
-                        id: 2,
-                        answer: "Verde",
-                        isCorrect: false
-                    },
-                    {
-                        id: 3,
-                        answer: "Rojo",
-                        isCorrect: false
-                    },
-                ],
-            },
-        ];
+                answer: "El plátano macho tiene una piel delgada y un sabor dulce que lo diferencia del plátano común.",
+                isCorrect: false
+            }, ],
+        }, {
+            id: 2,
+            text: "¿Qué medidas se pueden tomar para mitigar los impactos ambientales del cultivo de plátano?",
+            options: [{
+                id: 1,
+                answer: "Reducir el uso de pesticidas y gestionar adecuadamente los residuos",
+                isCorrect: true
+            }, {
+                id: 2,
+                answer: "Aumentar la cantidad de agua utilizada en el riego",
+                isCorrect: false
+            }, {
+                id: 3,
+                answer: "Ignorar el análisis del suelo y aplicar fertilizantes al azar",
+                isCorrect: false
+            }, ],
+        }, {
+            id: 3,
+            text: "¿Cuál es el ciclo de producción del plátano desde la siembra hasta la cosecha?",
+            options: [{
+                id: 1,
+                answer: "Entre 26 y 28 semanas",
+                isCorrect: true
+            }, {
+                id: 2,
+                answer: "Entre 10 y 12 semanas",
+                isCorrect: false
+            }, {
+                id: 3,
+                answer: "Entre 30 y 35 semanas",
+                isCorrect: false
+            }, ],
+        }, ];
 
         // Aleatoriza las preguntas y las opciones
         const questions = [...doleSourceQuestions];
@@ -356,7 +344,7 @@
             introOverlay.style.display = "flex";
         });
 
-        setVideoSource();
+
 
         startButton.addEventListener("click", () => {
             video.play();
@@ -371,10 +359,13 @@
 
         function setVideoSource() {
             video.src =
-                window.innerWidth <= 768 ?
+                window.innerWidth > 768 ?
                 "<?= base_url('assets/videos/dia01.webm'); ?>" :
                 "<?= base_url('assets/videos/dia01_movil.webm'); ?>";
+
         }
+
+        setVideoSource();
     </script>
 
 </body>
